@@ -1,0 +1,75 @@
+@import './base.scss';
+
+@mixin button-text-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ins-group-button {
+  display: inline-block;
+}
+
+.ins-button {
+  &.el-button {
+    border-radius: var(--border-radius-base, $--border-radius-base);
+    font-weight: var(--button-font-weight, $--button-font-weight);
+  }
+  &.el-button--default {
+    color: var(--color-text-primary, $--color-text-primary);
+    background-color: var(--color-white, $--color-white);
+    border-color: var(--border-color-base, $--border-color-base);
+  }
+  &.el-button--default:hover {
+    color: var(--color-primary, $--color-primary);
+    background-color: var(--color-white, $--color-white);
+    border-color: var(--color-primary, $--color-primary);
+  }
+  &.el-button--default:focus {
+    color: var(--color-primary, $--color-primary);
+    background-color: var(--color-white, $--color-white);
+    border-color: var(--color-primary, $--color-primary);
+  }
+  @each $size in $--sizes {
+    &.el-button--#{$size} {
+      padding: map-get($--button-paddings, $size);
+      font-size: map-get($--button-font-sizes, $size);
+    }
+  }
+  @each $type in $--types {
+    &.el-button--#{$type} {
+      background-color: map-get($--colors, $type);
+      border-color: map-get($--colors, $type);
+    }
+    &.el-button--#{$type}:hover {
+      background-color: map-get($--colors-darker, $type);
+      border-color: map-get($--colors-darker, $type);
+    }
+    &.el-button--#{$type}:active {
+      background-color: map-get($--colors-dark, $type);
+      border-color: map-get($--colors-dark, $type);
+    }
+    &.el-button--#{$type}:focus {
+      background-color: map-get($--colors-dark, $type);
+      border-color: map-get($--colors-dark, $type);
+    }
+  }
+  /** text button */
+  &.ins-button-text {
+    color: var(--color-primary, $--color-primary);
+    @include button-text-padding;
+    @each $type in $--types {
+      &.ins-button-text--text-#{$type} {
+        color: map-get($--colors, $type);
+        &:hover { color: map-get($--colors-darker, $type); }
+        &:active { color: map-get($--colors-dark, $type); }
+        &:focus { color: map-get($--colors-dark, $type); }
+      }
+    }
+    &.is-disabled {
+      color: var(--button-disabled-color, $--button-disabled-color);
+      &:hover, &:active, &:focus {
+        color: var(--button-disabled-color-hover, $--button-disabled-color-hover);
+      }
+    }
+  }
+}

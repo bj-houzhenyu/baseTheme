@@ -1,0 +1,30 @@
+@import './base.scss';
+
+.ins-menu {
+  &.el-menu {
+    @each $size in $--sizes {
+      &.#{$size} {
+        .ins-menu-item.el-menu-item {
+          padding: 0 27px;
+          height: map-get($--form-item-heights, $size);
+          line-height: map-get($--form-item-heights, $size);
+        }
+      }
+    }
+    .ins-menu-item.el-menu-item {
+      .ins-menu-icon { margin-right: 8px; }
+      &.is-active {
+        color: var(--color-primary, $--color-primary);
+        background: var(--color-primary-light-9, $--color-primary-light-9);
+        &:before {
+          content: " ";
+          background-color: var(--color-primary, $--color-primary);
+          height: 100%;
+          position: absolute;
+          width: var(--menu-item-active-width, $--menu-item-active-width);
+          left: 0;
+        }
+      }
+    }
+  }
+}

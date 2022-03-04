@@ -1,0 +1,71 @@
+@import './base.scss';
+
+.ins-date-picker, .ins-time-picker {
+  &.el-date-editor.ins-date-editor-line {
+    box-sizing: border-box;
+    border-bottom: solid 1px var(--color-primary, $--color-primary);
+    cursor: pointer;
+    input.el-input__inner {
+      background-color: transparent;
+      padding: 0;
+      border: 0;
+      text-align: center;
+      cursor: pointer;
+    }
+    .el-input__prefix, .el-input__suffix {
+      display: none;
+    }
+    &.el-date-editor--daterange,
+    &.el-date-editor--datetimerange,
+    &.el-date-editor--timerange {
+      padding: 0;
+      border: 0;
+      border-bottom: solid 1px var(--color-primary, $--color-primary);
+      justify-content: space-around;
+      > i {
+        display: none;
+      }
+      > .el-range-input {
+        flex: 1;
+        text-align: center;
+      }
+      > .el-range-separator {
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+.ins-date-picker.el-date-editor.line {
+  width: 120px;
+}
+.ins-date-picker.el-date-editor--datetime.line {
+  width: 180px;
+}
+.ins-date-picker.el-date-editor--daterange.line {
+  width: 240px;
+}
+.ins-date-picker.el-date-editor--datetimerange.line {
+  width: 380px;
+}
+.ins-time-picker.el-date-editor.line {
+  width: 100px;
+}
+.ins-time-picker.el-date-editor--timerange.line {
+  width: 180px;
+}
+
+.ins-date-picker-poper, .ins-time-picker-poper {
+  .el-date-table {
+    tr {
+      td {
+        &.current:not(.disabled) span {
+          background-color: var(--color-primary, $--color-primary);
+        }
+        &:hover span, &.today span {
+          color: var(--color-primary, $--color-primary);
+        }
+      }
+    }
+  }
+}

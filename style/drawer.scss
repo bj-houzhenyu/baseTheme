@@ -1,0 +1,17 @@
+@import './base.scss';
+
+.ins-drawer {
+  .el-drawer__header {
+    margin-bottom: 0;
+    color: var(--drawer-header-color, $--drawer-header-color);
+    font-weight: var(--drawer-header-font-weight, $--drawer-header-font-weight);
+    line-height: var(--drawer-header-line-height, $--drawer-header-line-height);
+  }
+  @each $size in $--sizes {
+    &.ins-drawer--#{$size} {
+      .el-drawer__header {
+        padding: map-get($--drawer-header-paddings, $size);
+      }
+    }
+  }
+}

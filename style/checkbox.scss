@@ -1,0 +1,37 @@
+@import './base.scss';
+
+.ins-checkbox {
+  .el-checkbox__inner:hover {
+    border-color: var(--color-primary, $--color-primary)
+  }
+}
+
+.ins-checkbox-group {
+  &.el-checkbox-group {
+    display: inline-block;
+    &.ins-checkbox-group-vertical {
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+    }
+    @each $size in $--sizes {
+      &.ins-checkbox-group--#{$size} {
+        line-height: map-get($--checkbox-item-line-heights, $size);
+      }
+    }
+    .ins-checkbox.el-checkbox {
+      top: 3px;
+      &.is-checked {
+        .el-checkbox__input.is-checked {
+          .el-checkbox__inner {
+            border-color: var(--color-primary, $--color-primary);
+            background: var(--color-primary, $--color-primary);
+          }
+        }
+        .el-checkbox__label {
+          color: var(--color-primary, $--color-primary);
+        }
+      }
+    }
+  }
+}

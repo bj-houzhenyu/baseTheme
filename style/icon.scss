@@ -1,0 +1,18 @@
+@import './base.scss';
+
+.ins-icon {
+  .ins-icon-item {
+    &.ins-icon-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      vertical-align: middle;
+      @each $type in $--types {
+        &.ins-icon-dot--#{$type} {
+          background-color: map-get($--colors, $type);
+        }
+      }
+    }
+  }
+}

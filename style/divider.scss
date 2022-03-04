@@ -1,0 +1,7 @@
+@import './base.scss';
+
+.ins-divider.el-divider {
+  &.el-divider--horizontal {
+    margin: 0;
+  }
+}

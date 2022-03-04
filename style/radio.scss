@@ -1,0 +1,36 @@
+@import './base.scss';
+
+.ins-radio {
+  .el-radio__inner:hover {
+    border-color: var(--color-primary, $--color-primary)
+  }
+}
+
+.ins-radio-group {
+  &.el-radio-group {
+    &.ins-radio-group-vertical {
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+    }
+    @each $size in $--sizes {
+      &.ins-radio-group--#{$size} {
+        line-height: map-get($--item-heights, $size);
+      }
+    }
+    .ins-radio.el-radio {
+      top: 5px;
+      &.is-checked {
+        .el-radio__input.is-checked {
+          .el-radio__inner {
+            border-color: var(--color-primary, $--color-primary);
+            background: var(--color-primary, $--color-primary);
+          }
+        }
+        .el-radio__label {
+          color: var(--color-primary, $--color-primary);
+        }
+      }
+    }
+  }
+}

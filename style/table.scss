@@ -1,0 +1,172 @@
+@import './base.scss';
+
+@mixin hidden-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /*! autoprefixer: on */
+  -webkit-line-clamp: 2;
+}
+
+.ins-search-table {
+  @each $size in $--sizes {
+    &.ins-data-table--#{$size} .ins-search-table-header {
+      padding: map-get($--search-table-header-paddings, $size);
+      background-color: map-get($--search-table-header-background-colors, $size);
+    }
+  }
+  .ins-search-table-header {
+    display: flex;
+    background-color: var(--background-color-base, $--background-color-base);
+    margin-bottom: var(--margin-base, $--margin-base);
+    .ins-search-table-search {
+      display: flex;
+      width: var(--search-table-search-width, $--search-table-search-width);
+      .ins-input.el-input {
+        .el-input-group__prepend {
+          background-color: var(--color-white, $--color-white);
+          .ins-select .el-select .el-input input {
+            color: var(--search-table-search-select-font-color, $--search-table-search-select-font-color);
+            &:focus { border-color: transparent; }
+          }
+        }
+      }
+      .ins-search-table-search-button {
+        margin-left: var(--margin-base, $--margin-base);
+      }
+    }
+    .ins-search-table-button {
+      flex: 1;
+      text-align: right;
+    }
+  }
+}
+
+.ins-data-table {
+  &.ins-data-table-full {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    .ins-table.ins-table-full.el-table {
+      flex: 1;
+    }
+  }
+  .ins-data-table-footer {
+    margin-top: var(--margin-base, $--margin-base);
+    display: flex;
+    .ins-pagination.el-pagination {
+      margin-left: auto;
+      &.is-background {
+        .el-pager {
+          li:not(.disabled).active {
+            background-color: var(--color-primary, $--color-primary);
+          }
+          li:not(.disabled):hover {
+            color: var(--color-primary, $--color-primary);
+          }
+        }
+      }
+    }
+  }
+  .el-loading-mask {
+    .el-loading-spinner .path {
+      stroke: var(--color-primary, $--color-primary);
+    }
+  }
+}
+
+.ins-table {
+  &.ins-table-full {
+    &.el-table {
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      .el-table__body-wrapper {
+        flex: 1;
+        overflow: auto;
+        td > .cell {
+          @include hidden-cell;
+        }
+      }
+      .el-table__fixed-right, .el-table__fixed-left {
+        .el-table__fixed-body-wrapper {
+          td > .cell {
+            @include hidden-cell;
+          }
+        }
+      }
+    }
+  }
+  @each $size in $--sizes {
+    &.ins-table--#{$size}.el-table th {
+      padding: map-get($--table-column-title-paddings, $size) 0;
+    }
+  }
+  .ins-table-column-filter {
+    display: flex;
+    &.ins-table-column-filter-is-active .ins-table-title-bar {
+      color: var(--color-primary, $--color-primary);
+    }
+    .sort-wrapper {
+      width: 24px;
+      position: relative;
+      .sort-caret {
+        position: absolute;
+        cursor: pointer;
+        &.ascending {
+          top: -1px;
+          &.sort-is-active {
+            border-bottom-color: var(--color-primary, $--color-primary);
+          }
+        }
+        &.descending {
+          bottom: 0;
+          &.sort-is-active {
+            border-top-color: var(--color-primary, $--color-primary);
+          }
+        }
+      }
+    }
+    .ins-table-filter-icon { cursor: pointer; }
+  }
+  table.el-table__header thead {
+    th.el-table__cell > .cell {
+      color: var(--table-column-title-color, $--table-column-title-color);
+    }
+  }
+  table.el-table__body tbody {
+    th > .cell {
+      color: (--color-text-regular, $--color-text-regular);
+    }
+    tr td .cell {
+      .ins-table-column-content { display: inline; }
+    }
+  }
+}
+
+.ins-table-filter-poper.el-popover.el-popper {
+  padding: 0;
+  .ins-table-filter-wrapper {
+    display: flex;
+    padding: var(--table-column-filter-wrapper-padding, $--table-column-filter-wrapper-padding);
+    .ins-form-base-input {
+      min-width: 100%;
+    }
+    .ins-form-base-input .ins-checkbox-group,
+    .ins-form-base-input .ins-radio-group {
+      overflow: hidden;
+    }
+  }
+  footer {
+    padding: 0 var(--table-column-filter-wrapper-padding, $--table-column-filter-wrapper-padding);
+  }
+  .el-loading-mask {
+    .el-loading-spinner .path {
+      stroke: var(--color-primary, $--color-primary);
+    }
+  }
+}

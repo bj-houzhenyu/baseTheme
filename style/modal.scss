@@ -1,0 +1,33 @@
+.ins-modal {
+  .el-dialog {
+    margin-top: 0;
+    .el-dialog__header {
+      padding: var(--padding-base, $--padding-base);
+    }
+    .el-dialog__body {
+      padding: 0;
+      .ins-modal-wrapper {
+        padding: 0 var(--padding-base, $--padding-base);
+      }
+    }
+    .el-dialog__footer {
+      padding: var(--padding-base, $--padding-base);
+    }
+  }
+  &.ins-flex-modal {
+    .el-dialog {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      .el-dialog__body {
+        flex: 1;
+        overflow: auto;
+      }
+    }
+  }
+  @for $step from 0 through 100 {
+    &.ins-modal--height-#{$step}-p {
+      .el-dialog { height: #{$step}#{"%"}; }
+    }
+  }
+}

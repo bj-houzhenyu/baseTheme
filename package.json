@@ -1,0 +1,31 @@
+{
+  "name": "@insgeek/theme",
+  "version": "0.0.9",
+  "description": "a theme package for insgeek-element",
+  "main": "index.js",
+  "files": [
+    "theme",
+    "style",
+    "readme.md",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.insgeek.cn/frontend/theme.git"
+  },
+  "homepage": "http://gitlab.insgeek.cn/frontend/theme",
+  "bugs": {
+    "url": "http://gitlab.insgeek.cn/frontend/theme/-/issues"
+  },
+  "author": "insgeek",
+  "license": "MIT",
+  "private": false,
+  "gitHooks": {
+    "commit-msg": "commitlint -e $GIT_PARAMS"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "yorkie": "^2.0.0"
+  }
+}

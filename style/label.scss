@@ -1,0 +1,65 @@
+@import './base.scss';
+
+.ins-label {
+  display: inline-block;
+  &.ins-label-line {
+    box-sizing: border-box;
+    border-bottom: solid 1px var(--color-primary, $--color-primary);
+    vertical-align: middle;
+  }
+  &.ins-label-disabled {
+    cursor: not-allowed;
+  }
+  &.ins-label-readonly {
+    cursor: text;
+  }
+  @each $size in $--sizes {
+    &.ins-label--#{$size} {
+      height: map-get($--item-heights, $size);
+      line-height: map-get($--item-heights, $size);
+      &.ins-label-line {
+        line-height: map-get($--line-item-heights, $size);
+        padding: 0 map-get($--paddings, $size);
+      }
+    }
+  }
+}
+
+.ins-line-label-popover.ins-popover {
+  .el-popover__reference-wrapper {
+    .ins-translate {
+      cursor: pointer;
+      &.ins-line-label-popover-placeholder {
+        color: var(--color-text-placeholder, $--color-text-placeholder);
+      }
+      &.ins-line-label-popover-disabled {
+        cursor: not-allowed;
+      }
+      &.ins-line-label-popover-readonly {
+        cursor: text;
+      }
+    }
+  }
+}
+
+.ins-line-label-popover-popper.el-popover.el-popper {
+  ul.el-cascader-menu__list {
+    li.el-cascader-node {
+      .el-checkbox {
+        .el-checkbox__input {
+          &.is-checked .el-checkbox__inner {
+            background-color: var(--color-primary, $--color-primary);
+            border-color: var(--color-primary, $--color-primary);
+          }
+          .el-checkbox__inner:hover,
+          &.is-focus .el-checkbox__inner {
+            border-color: var(--color-primary, $--color-primary);
+          }
+        }
+      }
+      &.is-active {
+        color: var(--color-primary, $--color-primary);
+      }
+    }
+  }
+}

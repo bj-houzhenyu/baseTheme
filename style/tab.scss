@@ -1,0 +1,14 @@
+@import './base.scss';
+
+.ins-tab.el-tabs {
+  .el-tabs__nav {
+    .el-tabs__active-bar {
+      background-color: var(--color-primary, $--color-primary);
+    }
+    .el-tabs__item {
+      &.is-top.is-active, &:hover {
+        color: var(--color-primary, $--color-primary);
+      }
+    }
+  }
+}

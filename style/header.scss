@@ -1,0 +1,10 @@
+@import './base.scss';
+
+.ins-header.ins-card{
+  @each $size in $--sizes {
+    &.ins-header--#{$size} .ins-card__header {
+      padding: map-get($--header-paddings, $size);
+    }
+  }
+}
+

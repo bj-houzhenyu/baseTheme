@@ -1,0 +1,442 @@
+/* 颜色
+--------------------------- */
+/// 白色
+$--color-white: #FFFFFF !default;
+/// 黑色
+$--color-black: #000000 !default;
+/// 主色
+$--color-primary: #409EFF !default;
+/// 操作色
+$--color-success: #67C23A !default;
+$--color-warning: #E6A23C !default;
+$--color-danger: #F56C6C !default;
+$--color-info: #909399 !default;
+/// 背景色
+$--background-color-base: #F5F7FA !default;
+/// 字体色
+$--color-text-primary: #303133 !default;
+$--color-text-regular: #606266 !default;
+$--color-text-secondary: #909399 !default;
+$--color-text-placeholder: #C0C4CC !default;
+
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 8cc5ff */
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* a0cfff */
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* b3d8ff */
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* c6e2ff */
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
+
+$--color-primary-light: mix($--color-white, $--color-primary, 80%) !default;
+$--color-success-light: mix($--color-white, $--color-success, 80%) !default;
+$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
+$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
+$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
+
+$--color-primary-lighter: mix($--color-white, $--color-primary, 90%) !default;
+$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
+$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
+$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
+$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
+
+$--color-primary-dark: mix($--color-black, $--color-primary, 10%) !default;
+$--color-success-dark: mix($--color-black, $--color-success, 10%) !default;
+$--color-warning-dark: mix($--color-black, $--color-warning, 10%) !default;
+$--color-danger-dark: mix($--color-black, $--color-danger, 10%) !default;
+$--color-info-dark: mix($--color-black, $--color-info, 10%) !default;
+
+$--color-primary-darker: mix($--color-black, $--color-primary, 15%) !default;
+$--color-danger-darker: mix($--color-black, $--color-danger, 15%) !default;
+$--color-warning-darker: mix($--color-black, $--color-warning, 15%) !default;
+$--color-success-darker: mix($--color-black, $--color-success, 15%) !default;
+$--color-info-darker: mix($--color-black, $--color-info, 15%) !default;
+
+/* 链接
+-------------------------- */
+$--link-color: $--color-primary-light-2 !default;
+$--link-hover-color: $--color-primary !default;
+
+/* 边框
+-------------------------- */
+/// 宽度
+$--border-width-base: 1px !default;
+/// 实线虚线格式
+$--border-style-base: solid !default;
+/// 边框色
+$--border-color-base: #DCDFE6 !default;
+$--border-color-light: #E4E7ED !default;
+$--border-color-lighter: #EBEEF5 !default;
+$--border-color-extra-light: #F2F6FC !default;
+/// hover 颜色
+$--border-color-hover: $--color-text-placeholder !default;
+/// 基本样式 border: 1px solid #cccccc;
+$--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+/// 圆角
+$--border-radius-base: 4px !default;
+$--border-radius-small: 2px !default;
+$--border-radius-circle: 100% !default;
+$--border-radius-zero: 0 !default;
+/// 阴影
+$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
+$--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
+$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+
+/* 字体
+-------------------------- */
+$--font-path: "element-ui/lib/theme-chalk/fonts" !default;
+/// 大小
+$--font-size-mini: 12px !default;
+$--font-size-small: 14px !default;
+$--font-size-medium: 16px !default;
+$--font-size-large: 18px !default;
+$--font-size-base: $--font-size-small !default;
+/// 粗体
+$--font-weight-primary: 500 !default;
+$--font-weight-secondary: 100 !default;
+
+/* 不可用状态
+-------------------------- */
+/// 不可用时背景填充色
+$--disabled-fill-base: $--background-color-base !default;
+/// 不可用时字体颜色
+$--disabled-color-base: $--color-text-placeholder !default;
+/// 不可用时边框颜色
+$--disabled-border-base: $--border-color-light !default;
+
+/* 外边距
+-------------------------- */
+$--margin-mini: 12px !default;
+$--margin-small: 16px !default;
+$--margin-medium: 20px !default;
+$--margin-large: 24px !default;
+$--margin-base: $--margin-small !default;
+$--margin-none: 0 !default;
+
+/* 内边距
+-------------------------- */
+$--padding-mini: 12px !default;
+$--padding-small: 16px !default;
+$--padding-medium: 20px !default;
+$--padding-large: 24px !default;
+$--padding-base: $--padding-small !default;
+$--padding-none: 0 !default;
+$--paddings: (
+  mini: var(--padding-mini, $--padding-mini),
+  small: var(--padding-small, $--padding-small),
+  medium: var(--padding-medium, $--padding-medium),
+  large: var(--padding-large, $--padding-large)
+);
+
+/* 高度
+-------------------------- */
+$--height-mini: 20px !default;
+$--height-small: 24px !default;
+$--height-medium: 28px !default;
+$--height-large: 32px !default;
+$--height-base: $--height-small !default;
+/// item height
+$--item-height-mini: 28px !default;
+$--item-height-small: 32px !default;
+$--item-height-medium: 36px !default;
+$--item-height-large: 40px !default;
+$--item-height-base: $--height-small !default;
+/// line item height
+$--line-item-height-mini: 27px !default;
+$--line-item-height-small: 31px !default;
+$--line-item-height-medium: 35px !default;
+$--line-item-height-large: 39px !default;
+$--line-item-height-base: $--height-small !default;
+
+/* 公共变量
+-------------------------- */
+$--sizes: mini, small, medium, large;
+$--size-base: medium;
+$--types: primary, success, warning, danger, info;
+$--colors: (
+  primary: var(--color-primary, $--color-primary),
+  success: var(--color-success, $--color-success),
+  warning: var(--color-warning, $--color-warning),
+  danger: var(--color-danger, $--color-danger),
+  info: var(--color-info, $--color-info)
+);
+$--colors-light: (
+  primary: var(--color-primary-light, $--color-primary-light),
+  success: var(--color-success-light, $--color-success-light),
+  warning: var(--color-warning-light, $--color-warning-light),
+  danger: var(--color-danger-light, $--color-danger-light),
+  info: var(--color-info-light, $--color-info-light)
+);
+$--colors-lighter: (
+  primary: var(--color-primary-lighter, $--color-primary-lighter),
+  success: var(--color-success-lighter, $--color-success-lighter),
+  warning: var(--color-warning-lighter, $--color-warning-lighter),
+  danger: var(--color-danger-lighter, $--color-danger-lighter),
+  info: var(--color-info-lighter, $--color-info-lighter)
+);
+$--colors-dark: (
+  primary: var(--color-primary-dark, $--color-primary-dark),
+  success: var(--color-success-dark, $--color-success-dark),
+  warning: var(--color-warning-dark, $--color-warning-dark),
+  danger: var(--color-danger-dark, $--color-danger-dark),
+  info: var(--color-info-dark, $--color-info-dark)
+);
+$--colors-darker: (
+  primary: var(--color-primary-darker, $--color-primary-darker),
+  success: var(--color-success-darker, $--color-success-darker),
+  warning: var(--color-warning-darker, $--color-warning-darker),
+  danger: var(--color-danger-darker, $--color-danger-darker),
+  info: var(--color-info-darker, $--color-info-darker)
+);
+$--paddings: (
+  mini: var(--padding-mini, $--padding-mini),
+  small: var(--padding-small, $--padding-small),
+  medium: var(--padding-medium, $--padding-medium),
+  large: var(--padding-large, $--padding-large)
+);
+$--heights: (
+  mini: var(--height-mini, $--height-mini),
+  small: var(--height-small, $--height-small),
+  medium: var(--height-medium, $--height-medium),
+  large: var(--height-large, $--height-large)
+);
+$--item-heights: (
+  mini: var(--item-height-mini, $--item-height-mini),
+  small: var(--item-height-small, $--item-height-small),
+  medium: var(--item-height-medium, $--item-height-medium),
+  large: var(--item-height-large, $--item-height-large)
+);
+$--line-item-heights: (
+  mini: var(--line-item-height-mini, $--line-item-height-mini),
+  small: var(--line-item-height-small, $--line-item-height-small),
+  medium: var(--line-item-height-medium, $--line-item-height-medium),
+  large: var(--line-item-height-large, $--line-item-height-large)
+);
+
+/* card
+-------------------------- */
+$--card-border-font-size: 14px !default;
+$--card-border-header-height: 40px !default;
+$--card-border-color: $--border-color-base !default;
+$--card-border-background-color: #F7F8FA !default;
+$--card-header-font-size-mini: 14px !default;
+$--card-header-font-size-small: 16px !default;
+$--card-header-font-size-medium: 18px !default;
+$--card-header-font-size-large: 20px !default;
+$--card-header-font-sizes: (
+  mini: var(--card-header-font-size-mini, $--card-header-font-size-mini),
+  small: var(--card-header-font-size-small, $--card-header-font-size-small),
+  medium: var(--card-header-font-size-medium, $--card-header-font-size-medium),
+  large: var(--card-header-font-size-large, $--card-header-font-size-large)
+);
+$--card-header-before-width: 3px !default;
+$--card-header-before-height: 16px !default;
+$--card-header-before-margin-right: 8px !default;
+$--card-header-padding-mini: $--padding-mini !default;
+$--card-header-padding-small: $--padding-small !default;
+$--card-header-padding-medium: $--padding-medium !default;
+$--card-header-padding-large: $--padding-large !default;
+$--card-header-paddings: (
+  mini: var(--card-header-padding-mini, $--card-header-padding-mini),
+  small: var(--card-header-padding-small, $--card-header-padding-small),
+  medium: var(--card-header-padding-medium, $--card-header-padding-medium),
+  large: var(--card-header-padding-large, $--card-header-padding-large)
+);
+
+/* header
+-------------------------- */
+$--header-padding-mini: $--padding-mini !default;
+$--header-padding-small: $--padding-small !default;
+$--header-padding-medium: $--padding-medium !default;
+$--header-padding-large: $--padding-large !default;
+$--header-paddings: (
+  mini: var(--header-padding-mini, $--header-padding-mini),
+  small: var(--header-padding-small, $--header-padding-small),
+  medium: var(--header-padding-medium, $--header-padding-medium),
+  large: var(--header-padding-large, $--header-padding-large)
+);
+
+/* drawer
+-------------------------- */
+$--drawer-header-padding-mini: $--padding-mini !default;
+$--drawer-header-padding-small: $--padding-small !default;
+$--drawer-header-padding-medium: $--padding-medium !default;
+$--drawer-header-padding-large: $--padding-large !default;
+$--drawer-header-paddings: (
+  mini: var(--drawer-header-padding-mini, $--drawer-header-padding-mini),
+  small: var(--drawer-header-padding-small, $--drawer-header-padding-small),
+  medium: var(--drawer-header-padding-medium, $--drawer-header-padding-medium),
+  large: var(--drawer-header-padding-large, $--drawer-header-padding-large)
+);
+$--drawer-header-color: #333 !default;
+$--drawer-header-line-height: 22px !default;
+$--drawer-header-font-weight: 600 !default;
+
+/* form item
+-------------------------- */
+/// label font size
+$--form-item-label-font-size-mini: 12px !default;
+$--form-item-label-font-size-small: 14px !default;
+$--form-item-label-font-size-medium: 16px !default;
+$--form-item-label-font-size-large: 18px !default;
+$--form-item-label-font-size-base: $--form-item-label-font-size-small !default;
+$--form-item-label-font-sizes: (
+  mini: var(--form-item-label-font-size-mini, $--form-item-label-font-size-mini),
+  small: var(--form-item-label-font-size-small, $--form-item-label-font-size-small),
+  medium: var(--form-item-label-font-size-medium, $--form-item-label-font-size-medium),
+  large: var(--form-item-label-font-size-large, $--form-item-label-font-size-large)
+);
+/// line height
+$--form-item-label-line-heights: (
+  mini: var(--height-mini, $--height-mini),
+  small: var(--height-small, $--height-small),
+  medium: var(--height-medium, $--height-medium),
+  large: var(--height-large, $--height-large)
+);
+/// margin bottom
+$--form-item-margin-bottom-none: 0px !default;
+$--form-item-margin-bottom-mini: 16px !default;
+$--form-item-margin-bottom-small: 20px !default;
+$--form-item-margin-bottom-medium: 24px !default;
+$--form-item-margin-bottom-large: 28px !default;
+$--form-item-margin-bottom-base: $--form-item-margin-bottom-small !default;
+$--form-item-margin-bottoms: (
+  mini: var(--form-item-margin-bottom-mini, $--form-item-margin-bottom-mini),
+  small: var(--form-item-margin-bottom-small, $--form-item-margin-bottom-small),
+  medium: var(--form-item-margin-bottom-medium, $--form-item-margin-bottom-medium),
+  large: var(--form-item-margin-bottom-large, $--form-item-margin-bottom-large)
+);
+/// form item error
+$--form-item-error-margin-top: 2px !default;
+$--form-item-grid-column-gap: 48px !default;
+$--form-item-grid-info-column-gap: 8px !default;
+$--form-item-grid-min-width-2: 400px !default;
+$--form-item-grid-min-width-3: 320px !default;
+$--form-item-grid-min-width-4: 240px !default;
+$--form-item-grid-min-widths: (
+  2: var(--form-item-grid-min-width-2, $--form-item-grid-min-width-2),
+  3: var(--form-item-grid-min-width-3, $--form-item-grid-min-width-3),
+  4: var(--form-item-grid-min-width-4, $--form-item-grid-min-width-4)
+);
+
+/* menu
+-------------------------- */
+$--menu-item-active-width: 4px !default;
+$--menu-item-height-mini: 40px !default;
+$--menu-item-height-small: 50px !default;
+$--menu-item-height-medium: 60px !default;
+$--menu-item-height-large: 70px !default;
+$--menu-item-height-base: $--menu-item-height-small !default;
+$--form-item-heights: (
+  mini: var(--menu-item-height-mini, $--menu-item-height-mini),
+  small: var(--menu-item-height-small, $--menu-item-height-small),
+  medium: var(--menu-item-height-medium, $--menu-item-height-medium),
+  large: var(--menu-item-height-large, $--menu-item-height-large)
+);
+
+/* table
+-------------------------- */
+$--table-header-background-color: #F7F8FA !default;
+$--table-column-title-color: $--color-info !default;
+$--table-column-title-padding-mini: 12px !default;
+$--table-column-title-padding-small: 14px !default;
+$--table-column-title-padding-medium: 16px !default;
+$--table-column-title-padding-large: 18px !default;
+$--table-column-title-paddings: (
+  mini: var(--table-column-title-padding-mini, $--table-column-title-padding-mini),
+  small: var(--table-column-title-padding-small, $--table-column-title-padding-small),
+  medium: var(--table-column-title-padding-medium, $--table-column-title-padding-medium),
+  large: var(--table-column-title-padding-large, $--table-column-title-padding-large)
+);
+$--table-column-filter-wrapper-padding: 8px !default;
+$--search-table-search-width: 550px !default;
+$--search-table-search-select-font-color: $--color-info !default;
+$--search-table-header-padding-mini: 0 !default;
+$--search-table-header-padding-small: 0 !default;
+$--search-table-header-padding-medium: 12px !default;
+$--search-table-header-padding-large: 14px !default;
+$--search-table-header-paddings: (
+  mini: var(--search-table-header-padding-mini, $--search-table-header-padding-mini),
+  small: var(--search-table-header-padding-small, $--search-table-header-padding-small),
+  medium: var(--search-table-header-padding-medium, $--search-table-header-padding-medium),
+  large: var(--search-table-header-padding-large, $--search-table-header-padding-large)
+);
+$--search-table-header-background-colors: (
+  mini: var(--color-white, $--color-white),
+  small: var(--color-white, $--color-white),
+  medium: var(--table-header-background-color, $--table-header-background-color),
+  large: var(--table-header-background-color, $--table-header-background-color)
+);
+
+/* input
+-------------------------- */
+$--input-font-color: $--color-text-primary !default;
+$--input-prepend-width: 120px !default;
+
+/* checkbox
+-------------------------- */
+$--checkbox-font-color: $--color-text-primary !default;
+$--checkbox-item-line-height-mini: 23px !default;
+$--checkbox-item-line-height-small: 27px !default;
+$--checkbox-item-line-height-medium: 31px !default;
+$--checkbox-item-line-height-large: 35px !default;
+$--checkbox-item-line-heights: (
+  mini: var(--checkbox-item-line-height-mini, $--checkbox-item-line-height-mini),
+  small: var(--checkbox-item-line-height-small, $--checkbox-item-line-height-small),
+  medium: var(--checkbox-item-line-height-medium, $--checkbox-item-line-height-medium),
+  large: var(--checkbox-item-line-height-large, $--checkbox-item-line-height-large)
+);
+
+/* radio
+-------------------------- */
+$--radio-font-color: $--color-text-primary !default;
+$--radio-item-line-height-mini: 23px !default;
+$--radio-item-line-height-small: 27px !default;
+$--radio-item-line-height-medium: 31px !default;
+$--radio-item-line-height-large: 35px !default;
+$--radio-item-line-heights: (
+  mini: var(--radio-item-line-height-mini, $--radio-item-line-height-mini),
+  small: var(--radio-item-line-height-small, $--radio-item-line-height-small),
+  medium: var(--radio-item-line-height-medium, $--radio-item-line-height-medium),
+  large: var(--radio-item-line-height-large, $--radio-item-line-height-large)
+);
+
+/* select
+-------------------------- */
+$--select-option-color: $--color-text-primary !default;
+
+/* cascader
+-------------------------- */
+$--cascader-menu-font-color: $--color-text-primary !default;
+
+/* datepicker
+-------------------------- */
+$--datepicker-font-color: $--color-text-primary !default;
+$--datepicker-header-font-color: $--color-text-primary !default;
+
+/* button
+-------------------------- */
+$--button-disabled-color: $--color-text-placeholder !default;
+$--button-disabled-color-hover: #E1E1E1 !default;
+$--button-font-weight: 350 !default;
+$--button-font-size-mini: 12px !default;
+$--button-font-size-small: 14px !default;
+$--button-font-size-medium: 14px !default;
+$--button-font-size-large: 14px !default;
+$--button-font-sizes: (
+  mini: var(--button-font-size-mini, $--button-font-size-mini),
+  small: var(--button-font-size-small, $--button-font-size-small),
+  medium: var(--button-font-size-medium, $--button-font-size-medium),
+  large: var(--button-font-size-large, $--button-font-size-large)
+);
+$--button-padding-mini: 7px 15px !default;
+$--button-padding-small: 8px 15px !default;
+$--button-padding-medium: 10px 20px !default;
+$--button-padding-large: 12px 20px !default;
+$--button-paddings: (
+  mini: var(--button-padding-mini, $--button-padding-mini),
+  small: var(--button-padding-small, $--button-padding-small),
+  medium: var(--button-padding-medium, $--button-padding-medium),
+  large: var(--button-padding-large, $--button-padding-large)
+);
